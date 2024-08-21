@@ -2,6 +2,7 @@ import './App.css';
 import styled from 'styled-components';
 import { Header } from './layout/header/Header';
 import { Hero } from './layout/sections/hero/Hero';
+import { Skills } from './layout/sections/skills/Skills';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <Header />
       <Main>
         <Hero />
+        <Skills />
       </Main>
     </div>
   );
