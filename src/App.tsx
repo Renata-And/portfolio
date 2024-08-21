@@ -4,6 +4,7 @@ import { Header } from './layout/header/Header';
 import { Hero } from './layout/sections/hero/Hero';
 import { Skills } from './layout/sections/skills/Skills';
 import { Projects } from './layout/sections/projects/Projects';
+import { Experience } from './layout/sections/experience/Experience';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <Skills />
         <Projects />
+        <Experience />
       </Main>
     </div>
   );
