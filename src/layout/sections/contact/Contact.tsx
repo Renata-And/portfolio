@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionTitle } from '../../../components/SectionTitle'
-import { Button } from '../../../components/Button'
+import { SectionTitle } from '../../../components/SectionTitle.styled'
+import { Button } from '../../../components/Button.styled'
 
 export const Contact = () => {
   return (
@@ -14,7 +14,7 @@ export const Contact = () => {
         <Field type={'email'} />
         <StyledLabel>Message</StyledLabel>
         <Field as='textarea' />
-        <Button type={'submit'}>Send</Button>
+        <Button type={'submit'} btnType={'primary'}>Send</Button>
       </StyledForm>
     </StyledContact>
   )
@@ -22,7 +22,7 @@ export const Contact = () => {
 
 const StyledContact = styled.section`
   min-height: 70vh;
-  border: 1px solid blueviolet;
+  outline: 1px solid blueviolet;
 `
 
 const StyledForm = styled.form`
@@ -31,7 +31,7 @@ const StyledForm = styled.form`
   gap: 5px;
   max-width: 400px;
   margin: 0 auto;
-  border: 1px solid blueviolet;
+  outline: 1px solid blueviolet;
 `
 
 const StyledLabel = styled.label`

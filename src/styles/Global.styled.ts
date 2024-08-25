@@ -38,6 +38,10 @@ export const GlobalStyles = createGlobalStyle`
     height: auto;
   }
 
+  section + section {
+    margin-top: 145px;
+  }
+
   header, section, footer {
     background-color: ${theme.colors.background};
   }

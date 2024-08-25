@@ -17,7 +17,7 @@ export const Workplace = (props: WorkplacePropsType) => {
 
 const StyledWorkplace = styled.div`
   max-width: 30%;
-  border: 1px solid blueviolet;
+  outline: 1px solid blueviolet;
 `
 
 const Year = styled.span`

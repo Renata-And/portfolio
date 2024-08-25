@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { SectionTitle } from '../../../components/SectionTitle'
-import { FlexWrapper } from '../../../components/FlexWrapper'
+import { SectionTitle } from '../../../components/SectionTitle.styled'
+import { FlexWrapper } from '../../../components/FlexWrapper.styled'
 import { Workplace } from './workplace/Workplace'
 
 export const Experience = () => {
@@ -19,5 +19,5 @@ export const Experience = () => {
 
 const StyledExperience = styled.section`
   min-height: 50vh;
-  border: 1px solid blueviolet;
+  outline: 1px solid blueviolet;
 `

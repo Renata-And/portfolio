@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { Menu } from '../../components/menu/Menu'
 import { Logo } from '../../components/logo/Logo'
-import { Container } from '../../components/Container';
-import { FlexWrapper } from '../../components/FlexWrapper';
+import { Container } from '../../components/Container.styled';
+import { FlexWrapper } from '../../components/FlexWrapper.styled';
 import { theme } from '../../styles/Theme';
 
 const menuItems = [{ itemTitle: 'About', href: '#' }, { itemTitle: 'Projects', href: '#' }, { itemTitle: 'Experience', href: '#' }, { itemTitle: 'Contacts', href: '#' }];

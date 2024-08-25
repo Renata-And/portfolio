@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Icon } from '../../components/icon/Icon'
-import { FlexWrapper } from '../../components/FlexWrapper'
+import { FlexWrapper } from '../../components/FlexWrapper.styled'
 
 export const Footer = () => {
   return (
@@ -32,7 +32,7 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
   min-height: 30vh;
-  border: 1px solid blueviolet;
+  outline: 1px solid blueviolet;
 `
 
 const SocialList = styled.ul`
