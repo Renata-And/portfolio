@@ -28,4 +28,19 @@ export const Button = styled.button<ButtonPropsType>`
   & + & {
     margin-left: 12px;
   }
+
+  &:hover {
+
+    ${props => props.btnType === 'primary' && css<ButtonPropsType>`
+      background-color: transparent;
+      border: 2px solid ${theme.colors.fontPrimary};
+      padding: 6px 22px;
+    `}
+
+    ${props => props.btnType === 'outline' && css<ButtonPropsType>`
+      background-color: ${theme.colors.accent};
+      border: 2px solid ${theme.colors.accent};
+      line-height: 1;
+    `}
+  }
 `
