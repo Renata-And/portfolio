@@ -25,5 +25,5 @@ export const Skills = () => {
 }
 
 const StyledSkills = styled.section`
-  outline: 1px solid blueviolet;
+  /* outline: 1px solid blueviolet; */
 `

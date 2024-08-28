@@ -10,7 +10,7 @@ export const SectionTitle = styled.h2`
 
   margin-bottom: 90px;
   
-  outline: 1px solid blueviolet;
+  /* outline: 1px solid blueviolet; */
 
   position: relative;
 

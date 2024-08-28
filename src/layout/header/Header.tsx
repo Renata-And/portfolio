@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Menu } from '../../components/menu/Menu'
+import { Menu } from './menu/Menu'
 import { Logo } from '../../components/logo/Logo'
 import { Container } from '../../components/Container.styled';
 import { FlexWrapper } from '../../components/FlexWrapper.styled';
@@ -23,7 +23,7 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
-  outline: 1px solid blueviolet;
+  /* outline: 1px solid blueviolet; */
 `
 
 const Name = styled.span`
