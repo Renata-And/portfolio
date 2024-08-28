@@ -4,6 +4,7 @@ export const theme = {
     accent: '#fdc435',
     fontPrimary: '#25282b',
     fontSecondary: '#828282',
-    fontTitle: '#333'
+    fontTitle: '#333',
+    borderColor: '#e8ecf4'
   }
 }

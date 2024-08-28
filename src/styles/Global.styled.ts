@@ -25,11 +25,13 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
   }
 
   button {
     background-color: unset;
     border: none;
+    cursor: pointer;
   }
 
   img, picture, video, canvas, svg {
@@ -39,11 +41,16 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   section + section {
-    margin-top: 145px;
+    padding-top: 145px;
   }
 
   header, section, footer {
     background-color: ${theme.colors.background};
   }
 
+  p {
+    font-size: 18px;
+    line-height: 150%;
+    color: ${theme.colors.fontSecondary};
+  }
 `
