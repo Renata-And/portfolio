@@ -1,25 +1,31 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FlexWrapper } from '../../../components/FlexWrapper.styled'
-// import photo from '../../../assets/images/photo.png'
 import { Button } from '../../../components/Button.styled'
 import { Container } from '../../../components/Container.styled'
 import { theme } from '../../../styles/Theme'
 import bgImage from '../../../assets/images/yellow-bg.png'
+import photo from '../../../assets/images/photo.png'
+
 
 export const Hero = () => {
   return (
     <StyledHero>
       <Container>
-        <FlexWrapper direction={'column'} justify={'center'} maxWidth={'530px'}>
-          <Title>Software Developer</Title>
-          <Name>Hello,  my name is Renata Androsova</Name>
-          <Text>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Text>
-          <div>
-            <Button btnType={'primary'}>Projects</Button>
-            <Button as='a' href={'#'} btnType={'outline'}>LinkedIn</Button>
-          </div>
-          {/* <Image src={photo} /> */}
+        <FlexWrapper justify={'space-between'}>
+          <FlexWrapper direction={'column'} justify={'center'} maxWidth={'530px'}>
+            <Title>Software Developer</Title>
+            <Name>Hello,  my name is Renata Androsova</Name>
+            <Text>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Text>
+            <div>
+              <Button btnType={'primary'}>Projects</Button>
+              <Button as='a' href={'#'} btnType={'outline'}>LinkedIn</Button>
+            </div>
+          </FlexWrapper>
+          <ImageWrapper>
+            <Image src={bgImage} />
+            <Photo src={photo} />
+          </ImageWrapper>
         </FlexWrapper>
       </Container>
     </StyledHero >
@@ -28,29 +34,25 @@ export const Hero = () => {
 
 
 const StyledHero = styled.section`
-  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  /* outline: 1px solid blueviolet; */
+  ${Button} {
+    margin-bottom: 110px;
+  }
 
-  display: flex;
-
-  /* background-image: url(${bgImage}); */
-  background-repeat: no-repeat;
-  background-position: top right;
-  z-index: 1;
-  outline: 1px solid blueviolet;
 `
-
-// const StyledDiv = styled.div`
-//   max-width: 530px;
-//   outline: 1px solid blueviolet;
-// `
 
 const Title = styled.h1`
   margin-top: 56px;
   margin-bottom: 12px;
   font-size: 20px;
   text-transform: uppercase;
-  color: #fdc435;
-  outline: 1px solid blueviolet;
+  color: ${theme.colors.accent};
+  z-index: 2;
+  overflow: hidden;
+
+  /* outline: 1px solid blueviolet; */
 `
 
 const Name = styled.h2`
@@ -59,17 +61,34 @@ const Name = styled.h2`
   font-size: 64px;
   line-height: 120%;
   color: ${theme.colors.fontTitle};
-  outline: 1px solid blueviolet;
+  z-index: 2;
+  /* outline: 1px solid blueviolet; */
 `
 
 const Text = styled.p`
-  margin-bottom: 32px;
   font-size: 24px;
-  line-height: 150%;
-  color: ${theme.colors.fontSecondary};
-  outline: 1px solid blueviolet;
+  margin-bottom: 32px;
+  z-index: 2;
 `
 
-// const Image = styled.img`
-//   outline: 1px solid blueviolet;
-// `
+const ImageWrapper = styled.div`
+  position: relative;
+  width: 100%;
+`
+
+const Image = styled.img`
+  position: absolute;
+  top: -50px;
+  right: -15px;
+`
+
+const Photo = styled.img`
+  position: relative;
+  top: -50px;
+  right: -15px;
+  mask-image: url(${bgImage});
+  mask-size: cover;
+  mask-position: center;
+`
+
+
