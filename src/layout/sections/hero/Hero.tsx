@@ -23,7 +23,7 @@ export const Hero = () => {
             </div>
           </FlexWrapper>
           <ImageWrapper>
-            <Image src={bgImage} />
+            {/* <Image src={bgImage} /> */}
             <Photo src={photo} />
           </ImageWrapper>
         </FlexWrapper>
@@ -36,6 +36,7 @@ export const Hero = () => {
 const StyledHero = styled.section`
   position: relative;
   z-index: 0;
+  overflow-x: clip;
   /* outline: 1px solid blueviolet; */
   ${Button} {
     margin-bottom: 110px;
@@ -71,24 +72,37 @@ const Text = styled.p`
   z-index: 2;
 `
 
-const ImageWrapper = styled.div`
-  position: relative;
-  width: 100%;
-`
+// Закоммиченные свойства для размешения фона через тег img
 
-const Image = styled.img`
-  position: absolute;
-  top: -50px;
-  right: -15px;
+const ImageWrapper = styled.div`
+  /* position: relative; */
+  max-width: 720px;
+  width: 100%;
+
+  background-image: url(${bgImage});
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  margin-top: -50px;
+  margin-right: -120px;
 `
+// const Image = styled.img`
+//   position: absolute;
+//   top: -50px;
+//   right: -15px;
+// `
 
 const Photo = styled.img`
-  position: relative;
+  /* position: relative;
   top: -50px;
-  right: -15px;
+  right: -15px; */
   mask-image: url(${bgImage});
   mask-size: cover;
   mask-position: center;
+
+  max-width: 720px;
+  width: 100%;
+  object-fit: cover;
 `
 
 
