@@ -39,4 +39,6 @@ const Name = styled.span`
   font-size: 18px;
   line-height: 180%;
   color: ${theme.colors.fontPrimary};
+
+  z-index: 10;
 `

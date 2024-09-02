@@ -6,14 +6,15 @@ import { Container } from '../../../components/Container.styled'
 import { theme } from '../../../styles/Theme'
 import bgImage from '../../../assets/images/yellow-bg.png'
 import photo from '../../../assets/images/photo.png'
+import { font } from '../../../styles/Common'
 
 
 export const Hero = () => {
   return (
     <StyledHero>
       <Container>
-        <FlexWrapper justify={'space-between'}>
-          <FlexWrapper direction={'column'} justify={'center'} maxWidth={'530px'}>
+        <FlexWrapper justify={'space-between'} gap={'10px'}>
+          <DescriptionWrapper>
             <Title>Software Developer</Title>
             <Name>Hello,  my name is Renata Androsova</Name>
             <Text>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Text>
@@ -21,7 +22,7 @@ export const Hero = () => {
               <Button btnType={'primary'}>Projects</Button>
               <Button as='a' href={'#'} btnType={'outline'}>LinkedIn</Button>
             </div>
-          </FlexWrapper>
+          </DescriptionWrapper>
           <ImageWrapper>
             {/* <Image src={bgImage} /> */}
             <Photo src={photo} />
@@ -37,11 +38,27 @@ const StyledHero = styled.section`
   position: relative;
   z-index: 0;
   overflow-x: clip;
-  /* outline: 1px solid blueviolet; */
-  ${Button} {
-    margin-bottom: 110px;
-  }
 
+  div > div {
+    @media ${theme.media.mobile} {
+      flex-wrap: wrap-reverse;
+    }
+  }
+`
+
+const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 530px;
+  margin-bottom: 120px;
+
+  flex-shrink: 1.5;
+
+  @media ${theme.media.tablet} {
+    max-width: 420px;
+    margin-bottom: 30px;
+  }
 `
 
 const Title = styled.h1`
@@ -50,32 +67,24 @@ const Title = styled.h1`
   font-size: 20px;
   text-transform: uppercase;
   color: ${theme.colors.accent};
-  z-index: 2;
-  overflow: hidden;
-
-  /* outline: 1px solid blueviolet; */
 `
 
 const Name = styled.h2`
   margin-bottom: 32px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 64px;
-  line-height: 120%;
+  ${font({ family: '"Roboto", sans-serif', Fmax: 64, Fmin: 42, weight: 700 })}
   color: ${theme.colors.fontTitle};
-  z-index: 2;
-  /* outline: 1px solid blueviolet; */
 `
 
 const Text = styled.p`
   font-size: 24px;
   margin-bottom: 32px;
-  z-index: 2;
 `
 
 // Закоммиченные свойства для размешения фона через тег img
 
 const ImageWrapper = styled.div`
   /* position: relative; */
+  flex-grow: 1;
   max-width: 720px;
   width: 100%;
 
@@ -85,6 +94,11 @@ const ImageWrapper = styled.div`
 
   margin-top: -50px;
   margin-right: -120px;
+
+  @media ${theme.media.mobile} {
+    margin-top: -50px;
+    margin-right: -120px;
+  }
 `
 // const Image = styled.img`
 //   position: absolute;
