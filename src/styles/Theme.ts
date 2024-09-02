@@ -5,6 +5,11 @@ export const theme = {
     fontPrimary: '#25282b',
     fontSecondary: '#828282',
     fontTitle: '#333',
-    borderColor: '#e8ecf4'
+    borderColor: '#e8ecf4',
+  },
+
+  media: {
+    tablet: 'screen and (max-width: 768px)',
+    mobile: 'screen and (max-width: 576px)',
   }
 }

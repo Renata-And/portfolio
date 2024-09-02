@@ -24,6 +24,11 @@ export const Menu = (props: MenuPropsType) => {
 
 const StyledMenu = styled.nav`
   z-index: 99;
+  
+  @media ${theme.media.tablet} {
+    display: none;
+  }
+
   ul {
     display: flex;
     gap: 30px;

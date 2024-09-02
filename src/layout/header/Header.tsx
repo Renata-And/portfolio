@@ -5,6 +5,7 @@ import { Container } from '../../components/Container.styled';
 import { FlexWrapper } from '../../components/FlexWrapper.styled';
 import { theme } from '../../styles/Theme';
 import { Icon } from '../../components/icon/Icon'
+import { MobileMenu } from './mobile menu/MobileMenu';
 
 const menuItems = [{ itemTitle: 'About', href: '#' }, { itemTitle: 'Projects', href: '#' }, { itemTitle: 'Experience', href: '#' }, { itemTitle: 'Contacts', href: '#' }];
 
@@ -16,6 +17,7 @@ export const Header = () => {
           <Icon iconId={'logo'} width={'50'} height={'50'} viewBox={'0 0 48 48'} />
           <Name>Renata Androsova</Name>
           <Menu items={menuItems} />
+          <MobileMenu items={menuItems} />
         </FlexWrapper>
       </Container>
     </StyledHeader>
