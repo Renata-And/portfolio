@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Menu } from './menu/Menu'
-import { Logo } from '../../components/logo/Logo'
 import { Container } from '../../components/Container.styled';
 import { FlexWrapper } from '../../components/FlexWrapper.styled';
 import { theme } from '../../styles/Theme';
+import { Icon } from '../../components/icon/Icon'
 
 const menuItems = [{ itemTitle: 'About', href: '#' }, { itemTitle: 'Projects', href: '#' }, { itemTitle: 'Experience', href: '#' }, { itemTitle: 'Contacts', href: '#' }];
 
@@ -13,7 +13,7 @@ export const Header = () => {
     <StyledHeader>
       <Container>
         <FlexWrapper align={'center'}>
-          <Logo />
+          <Icon iconId={'logo'} width={'50'} height={'50'} viewBox={'0 0 48 48'} />
           <Name>Renata Androsova</Name>
           <Menu items={menuItems} />
         </FlexWrapper>
@@ -23,11 +23,14 @@ export const Header = () => {
 }
 
 const StyledHeader = styled.header`
+  svg {
+    padding: 5px;
+  }
   /* outline: 1px solid blueviolet; */
 `
 
 const Name = styled.span`
-  margin-left: 15px;
+  margin-left: 10px;
   margin-right: auto;
   font-family: 'Comfortaa', sans-serif;
   font-weight: 700;
