@@ -51,6 +51,10 @@ export const GlobalStyles = createGlobalStyle`
     padding-top: 0;
   }
 
+  section:last-of-type {
+    padding-bottom: 0;
+  }
+
   header, section, footer {
     background-color: ${theme.colors.background};
   }

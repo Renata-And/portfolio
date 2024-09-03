@@ -35,7 +35,6 @@ const StyledContact = styled.section`
     resize: none;
     height: 160px;
   }
-  /* outline: 1px solid blueviolet; */
 `
 
 const StyledForm = styled.form`
@@ -45,8 +44,7 @@ const StyledForm = styled.form`
   max-width: 400px;
   width: 100%;
   margin: 0 auto;
-  padding-bottom: 64px;
-  /* outline: 1px solid blueviolet; */
+  padding-bottom: 56px;
 
   & button {
     align-self: flex-end;
