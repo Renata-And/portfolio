@@ -42,6 +42,10 @@ export const GlobalStyles = createGlobalStyle`
 
   section + section {
     padding-top: 145px;
+
+    @media ${theme.media.tablet} {
+      padding-top: 80px;
+    }
   }
 
   header, section, footer {

@@ -9,9 +9,6 @@ export const SectionTitle = styled.h2`
   color: ${theme.colors.fontPrimary};
 
   margin-bottom: 90px;
-  
-  /* outline: 1px solid blueviolet; */
-
   position: relative;
 
   &::before {
@@ -26,5 +23,9 @@ export const SectionTitle = styled.h2`
     bottom: -5px;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  @media ${theme.media.mobile} {
+    margin-bottom: 50px;
   }
 `;
