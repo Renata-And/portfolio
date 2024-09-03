@@ -11,7 +11,7 @@ export const Experience = () => {
     <StyledExperience>
       <SectionTitle>Experience</SectionTitle>
       <Container>
-        <FlexWrapper justify={'space-around'} align={'center'}>
+        <FlexWrapper justify={'space-around'} align={'center'} wrap={'wrap'}>
           <Workplace year={2022} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut labore et dolore magna aliqua.'} />
           <Workplace year={2023} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut labore et dolore magna aliqua.'} />
           <Workplace year={2024} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor t ut labore et dolore magna aliqua.'} />
@@ -22,21 +22,31 @@ export const Experience = () => {
 }
 
 const StyledExperience = styled.section`
-  /* outline: 1px solid blueviolet; */
-
   ${FlexWrapper} {
+    @media ${theme.media.tablet} {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  ${FlexWrapper}:first-child {
     position: relative;
 
-    &::before {
+    &::after {
       content: '';
-      display: inline-block;
+      display: block;
       width: 67%;
       height: 5px;
       background-color: ${theme.colors.accent};
       position: absolute;
       left: 50%;
-      top: 30%;
+      top: 53px;
       transform: translateX(-50%);
+
+      @media ${theme.media.tablet} {
+        display: none;
       }
+    }
   }
+
 `

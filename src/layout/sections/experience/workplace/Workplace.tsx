@@ -17,9 +17,15 @@ export const Workplace = (props: WorkplacePropsType) => {
 }
 
 const StyledWorkplace = styled.div`
-  max-width: 25%;
+  flex-grow: 1;
+  width: 200px;
+  padding: 0 15px;
   text-align: center;
-  /* outline: 1px solid blueviolet; */
+
+  @media ${theme.media.tablet} {
+    width: 345px;
+    padding: 0;
+  }
 `
 
 const Year = styled.span`
