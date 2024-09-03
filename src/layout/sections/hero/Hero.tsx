@@ -13,7 +13,7 @@ export const Hero = () => {
   return (
     <StyledHero>
       <Container>
-        <FlexWrapper justify={'space-between'} gap={'10px'}>
+        <FlexWrapper justify={'space-between'} align={'flex-start'} gap={'10px'}>
           <DescriptionWrapper>
             <Title>Software Developer</Title>
             <Name>Hello,  my name is Renata Androsova</Name>
@@ -50,14 +50,11 @@ const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 530px;
-  margin-bottom: 120px;
-
   flex-shrink: 1.5;
+  max-width: 530px;
 
   @media ${theme.media.tablet} {
     max-width: 420px;
-    margin-bottom: 30px;
   }
 `
 
@@ -94,11 +91,6 @@ const ImageWrapper = styled.div`
 
   margin-top: -50px;
   margin-right: -120px;
-
-  @media ${theme.media.mobile} {
-    margin-top: -50px;
-    margin-right: -120px;
-  }
 `
 // const Image = styled.img`
 //   position: absolute;
