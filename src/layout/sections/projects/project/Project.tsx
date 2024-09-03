@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { theme } from '../../../../styles/Theme'
 import { FlexWrapper } from '../../../../components/FlexWrapper.styled'
+import { font } from '../../../../styles/Common'
 
 type ProjectPropsType = {
   title: string
@@ -14,7 +15,7 @@ type ProjectPropsType = {
 export const Project = (props: ProjectPropsType) => {
   return (
     <StyledProject>
-      <FlexWrapper justify={'space-between'} align={'center'} direction={props.direction || 'row'}>
+      <FlexWrapper justify={'space-between'} align={'center'} direction={props.direction || 'row'} wrap={'wrap-reverse'}>
         <Wrapper>
           <ProjectTitle>{props.title}</ProjectTitle>
           <Text>{props.description}</Text>
@@ -32,29 +33,38 @@ const StyledProject = styled.div`
   margin: 0 auto;
   box-shadow: 0 6px 64px 0 rgba(112, 144, 176, 0.1);
   border-radius: 24px;
-  /* outline: 1px solid blueviolet; */
   overflow: hidden;
 
   & + & {
     margin-top: 80px;
   }
+
+  @media ${theme.media.mobile} {
+    & + & {
+      margin-top: 50px;
+    }
+  }
 `
 
 const Wrapper = styled.div`
-  width: 50%;
-  padding: 0 50px;
+  width: 345px;
+  flex-grow: 1;
+  padding: 130px 50px;
+
+  @media ${theme.media.mobile} {
+    padding-left: 35px;
+    padding-right: 27px;
+  }
 `
 
 const ProjectTitle = styled.h3`
-  font-family: "Playfair Display", sans-serif;
+  ${font({ family: '"Playfair Display", sans-serif', lineHeight: 1.5, weight: 700 })}
   font-size: 40px;
-  line-height: 150%;
   color: ${theme.colors.fontPrimary};
 `
 
 const Text = styled.p`
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin: 25px 0 25px;
 `
 
 const Link = styled.a`
@@ -63,10 +73,8 @@ const Link = styled.a`
   border-radius: 24px;
   padding: 8px 24px;
 
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  ${font({ family: '"Roboto", sans-serif', lineHeight: 1.5, weight: 500 })}
   font-size: 18px;
-  line-height: 150%;
   color: ${theme.colors.fontPrimary};
 
   &:hover {
@@ -75,8 +83,9 @@ const Link = styled.a`
   }
 `
 const Image = styled.img`
-  display: inline-block;
-  width: 50%;
-  height: 526px;
+  /* display: inline-block; */
+  width: 345px;
+  height: 525px;
   object-fit: cover;
+  flex-grow: 1;
 `

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { SectionTitle } from '../../../components/SectionTitle.styled'
 import { Project } from './project/Project'
 import { Container } from '../../../components/Container.styled'
-import imgProj1 from '../../../assets/images/projects/project1.jpeg'
+import imgProj1 from '../../../assets/images/projects/proj1.jpg'
 import imgProj2 from '../../../assets/images/projects/project2.jpeg'
 import imgProj3 from '../../../assets/images/projects/project3.jpeg'
 
@@ -42,5 +42,5 @@ export const Projects = () => {
 }
 
 const StyledProjects = styled.section`
-  /* outline: 1px solid blueviolet; */
+
 `

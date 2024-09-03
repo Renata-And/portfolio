@@ -40,12 +40,15 @@ export const GlobalStyles = createGlobalStyle`
     height: auto;
   }
 
-  section + section {
-    padding-top: 145px;
-
+  section {
+    padding: 72px 0;
     @media ${theme.media.tablet} {
-      padding-top: 80px;
+      padding: 40px 0;
     }
+  }
+
+  section:first-of-type {
+    padding-top: 0;
   }
 
   header, section, footer {
