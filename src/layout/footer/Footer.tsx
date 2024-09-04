@@ -1,74 +1,48 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Icon } from '../../components/icon/Icon'
-import { FlexWrapper } from '../../components/FlexWrapper.styled'
-import { theme } from '../../styles/Theme'
-import bgImg from '../../assets/images/footerImg.png'
-import { Container } from '../../components/Container.styled'
+import React from 'react';
+import { Icon } from '../../components/icon/Icon';
+import { FlexWrapper } from '../../components/FlexWrapper.styled';
+import { Container } from '../../components/Container.styled';
+import bgImg from '../../assets/images/footerImg.png';
+import { S } from './Footer_Styles';
 
-export const Footer = () => {
+const socialData = [
+  {
+    iconId: 'instagram',
+    href: '#'
+  },
+  {
+    iconId: 'linkedin',
+    href: '#'
+  },
+  {
+    iconId: 'email',
+    href: '#'
+  },
+]
+
+export const Footer: React.FC = () => {
   return (
-    <StyledFooter>
+    <S.Footer>
       <Container>
         <FlexWrapper direction={'column'} align={'center'}>
-          <SocialList>
-            <SocialItem>
-              <SocialLink href={'#'}>
-                <Icon iconId={'instagram'} width={'48'} height={'49'} viewBox={'0 0 48 49'} />
-              </SocialLink>
-            </SocialItem>
-            <SocialItem>
-              <SocialLink href={'#'}>
-                <Icon iconId={'linkedin'} width={'48'} height={'49'} viewBox={'0 0 48 49'} />
-              </SocialLink>
-            </SocialItem>
-            <SocialItem>
-              <SocialLink href={'#'}>
-                <Icon iconId={'email'} width={'48'} height={'49'} viewBox={'0 0 48 49'} />
-              </SocialLink>
-            </SocialItem>
-          </SocialList>
-          <Copyright>Madelyn Torff 2021 </Copyright>
+
+          <S.SocialList>
+            {socialData.map((s, i) => {
+              return (
+                <li>
+                  <S.SocialLink href={s.href}>
+                    <Icon iconId={s.iconId} width={'48'} height={'49'} viewBox={'0 0 48 49'} />
+                  </S.SocialLink>
+                </li>
+              )
+            })}
+          </S.SocialList>
+
+          <S.Copyright>Madelyn Torff 2021 </S.Copyright>
+
         </FlexWrapper>
-        <Image src={bgImg} />
+        <S.Image src={bgImg} />
       </Container>
-    </StyledFooter>
+    </S.Footer>
   )
 }
-
-const StyledFooter = styled.footer`
-  padding-bottom: 240px;
-  position: relative;
-`
-
-const SocialList = styled.ul`
-  display: flex;
-  gap: 24px;
-  margin-bottom: 26px;
-`
-
-const SocialItem = styled.li`
-  
-`
-
-const SocialLink = styled.a`
-  display: inline-block;
-  color: ${theme.colors.fontPrimary};
-
-  &:hover {
-    opacity: 0.7;
-    transform: scale(1.1);
-  }
-`
-
-const Copyright = styled.small`
-  font-size: 16px;
-  color: ${theme.colors.fontSecondary};
-`
-
-const Image = styled.img`
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-`

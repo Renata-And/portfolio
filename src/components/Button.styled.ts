@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../styles/Theme';
+import { font } from '../styles/Common';
 
 type ButtonPropsType = {
   btnType: string
@@ -7,8 +8,7 @@ type ButtonPropsType = {
 
 export const Button = styled.button<ButtonPropsType>`
   display: inline-block;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
+  ${font({ family: '"Roboto", sans-serif', weight: 500 })}
   font-size: 18px;
   color: ${theme.colors.fontPrimary};
 

@@ -1,79 +1,31 @@
-import React from 'react'
-import styled from 'styled-components'
-import { SectionTitle } from '../../../components/SectionTitle.styled'
-import { Button } from '../../../components/Button.styled'
-import { theme } from '../../../styles/Theme'
-import { Container } from '../../../components/Container.styled'
-import { font } from '../../../styles/Common'
+import React from 'react';
+import { SectionTitle } from '../../../components/SectionTitle.styled';
+import { Button } from '../../../components/Button.styled';
+import { Container } from '../../../components/Container.styled';
+import { S } from './Contact_Styles';
 
-export const Contact = () => {
+export const Contact: React.FC = () => {
   return (
-    <StyledContact>
+    <S.Contact>
       <Container>
         <SectionTitle>Contact me</SectionTitle>
-        <StyledForm>
-          <StyledLabel>
+        <S.Form>
+          <S.Label>
             <span>Name</span>
-            <Field type={'text'} />
-          </StyledLabel>
-          <StyledLabel>
+            <S.Field type={'text'} />
+          </S.Label>
+          <S.Label>
             <span>Email</span>
-            <Field type={'email'} />
-          </StyledLabel>
-          <StyledLabel>
+            <S.Field type={'email'} />
+          </S.Label>
+          <S.Label>
             <span>Message</span>
-            <Field as='textarea' />
-          </StyledLabel>
+            <S.Field as='textarea' />
+          </S.Label>
           <Button type={'submit'} btnType={'primary'}>Send</Button>
-        </StyledForm>
+        </S.Form>
       </Container>
-    </StyledContact>
+    </S.Contact>
   )
 }
 
-const StyledContact = styled.section`
-  textarea {
-    display: block;
-    resize: none;
-    height: 158px;
-  }
-`
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  max-width: 400px;
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 56px;
-
-  & button {
-    align-self: flex-end;
-  }
-`
-
-const StyledLabel = styled.label`
-  ${font({ weight: 600, lineHeight: 1.5 })}
-  font-size: 16px;
-  color: ${theme.colors.fontPrimary};
-
-  span {
-    display: inline-block;
-    margin-bottom: 8px;
-  }
-`
-
-const Field = styled.input`
-  width: 100%;
-  border: 1px solid ${theme.colors.borderColor};
-  border-radius: 8px;
-  height: 38px;
-
-  font-size: 16px;
-  font-family: 'Nunito', sans-serif;
-
-  &:focus-visible {
-    outline: 1px solid ${theme.colors.borderColor};
-  }
-`
