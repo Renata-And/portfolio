@@ -1,39 +1,51 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 import { theme } from '../../../styles/Theme';
+import { font } from '../../../styles/Common';
 
-type MenuPropsType = {
-  items: { itemTitle: string; href: string; }[];
-};
 
-export const MobileMenu = (props: MenuPropsType) => {
-  return (
-    <StyledMobileMenu>
-      <BurgerButton isOpen={false}>
-        <span></span>
-      </BurgerButton>
+// Menu
 
-      <MobileMenuPopup isOpen={false}>
-        <ul>
-          {props.items.map((item, index) => {
-            return (
-              <ListItem key={index}>
-                <Link href={item.href}>{item.itemTitle}</Link>
-              </ListItem>
-            )
-          })}
-        </ul>
-      </MobileMenuPopup>
-    </StyledMobileMenu>
-  );
-};
-
-const StyledMobileMenu = styled.nav`
-  display: none;
-
-  @media ${theme.media.tablet} {
-    display: block;
+const MenuItem = styled.li`
+  &:hover {
+    opacity: 0.8;
   }
+
+  @media ${theme.media.desktop} {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      height: 2px;
+      width: 100%;
+      background-color: ${theme.colors.background};
+
+      position: absolute;
+      top: 90%;
+
+      transform: scale(0);
+    }
+
+    &:hover {
+      opacity: 0.8;
+
+      &::before {
+        transform: scale(1);
+      }
+    }
+  }
+`
+
+const Link = styled.a`
+  ${font({ family: "'Raleway', sans-serif", weight: 500, lineHeight: 1.56 })}
+  font-size: 18px;
+  color: ${theme.colors.fontPrimary};
+`
+
+// Mobile menu
+
+const MobileMenu = styled.nav`
+
 `
 
 const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
@@ -110,35 +122,23 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
   }
 `
 
-const ListItem = styled.li`
-  position: relative;
+// Desktop menu
 
-  &::before {
-    content: '';
-    display: inline-block;
-    height: 2px;
-    width: 100%;
-    background-color: ${theme.colors.accent};
+const DesktopMenu = styled.nav`
+  z-index: 99;
 
-    position: absolute;
-    top: 90%;
-
-    transform: scale(0);
-  }
-
-  &:hover {
-    opacity: 0.8;
-
-    &::before {
-      transform: scale(1);
-    }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 48px;
   }
 `
 
-const Link = styled.a`
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 156%;
-  color: ${theme.colors.fontPrimary};
-`
+export const S = {
+  MenuItem,
+  Link,
+  MobileMenu,
+  MobileMenuPopup,
+  BurgerButton,
+  DesktopMenu
+}

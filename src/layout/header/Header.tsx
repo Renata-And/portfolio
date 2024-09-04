@@ -1,44 +1,36 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Menu } from './menu/Menu'
+import React from 'react';
 import { Container } from '../../components/Container.styled';
 import { FlexWrapper } from '../../components/FlexWrapper.styled';
-import { theme } from '../../styles/Theme';
-import { Icon } from '../../components/icon/Icon'
-import { MobileMenu } from './mobile menu/MobileMenu';
+import { Icon } from '../../components/icon/Icon';
+import { DesktopMenu } from './headerMenu/desktopMenu/DesktopMenu';
+import { MobileMenu } from './headerMenu/mobileMenu/MobileMenu';
+import { S } from './Header_Styles';
 
 const menuItems = [{ itemTitle: 'About', href: '#' }, { itemTitle: 'Projects', href: '#' }, { itemTitle: 'Experience', href: '#' }, { itemTitle: 'Contacts', href: '#' }];
 
-export const Header = () => {
+export const Header: React.FC = () => {
+  const [width, setWidth] = React.useState(window.innerWidth);
+  const breakpoint = 768;
+
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth)
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
   return (
-    <StyledHeader>
+    <S.Header>
       <Container>
         <FlexWrapper align={'center'}>
           <Icon iconId={'logo'} width={'50'} height={'50'} viewBox={'0 0 48 48'} />
-          <Name>Renata Androsova</Name>
-          <Menu items={menuItems} />
-          <MobileMenu items={menuItems} />
+          <S.Name>Renata Androsova</S.Name>
+          {width < breakpoint
+            ? <MobileMenu items={menuItems} />
+            : <DesktopMenu items={menuItems} />}
         </FlexWrapper>
       </Container>
-    </StyledHeader>
+    </S.Header>
   )
 }
 
-const StyledHeader = styled.header`
-  svg {
-    padding: 5px;
-  }
-  /* outline: 1px solid blueviolet; */
-`
 
-const Name = styled.span`
-  margin-left: 10px;
-  margin-right: auto;
-  font-family: 'Comfortaa', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 180%;
-  color: ${theme.colors.fontPrimary};
-
-  z-index: 10;
-`
