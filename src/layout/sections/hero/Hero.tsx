@@ -59,7 +59,7 @@ const DescriptionWrapper = styled.div`
 `
 
 const Title = styled.h1`
-  margin-top: 56px;
+  margin-top: 60px;
   margin-bottom: 12px;
   font-size: 20px;
   text-transform: uppercase;
@@ -74,7 +74,7 @@ const Name = styled.h2`
 
 const Text = styled.p`
   font-size: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 35px;
 `
 
 // Закоммиченные свойства для размешения фона через тег img

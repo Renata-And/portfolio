@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { theme } from '../../../styles/Theme';
+import { font } from '../../../styles/Common';
 
 type MenuPropsType = {
   items: { itemTitle: string; href: string; }[];
@@ -31,40 +32,44 @@ const StyledMenu = styled.nav`
 
   ul {
     display: flex;
-    gap: 30px;
+    gap: 48px;
   }
 
 `
 
 const ListItem = styled.li`
-  position: relative;
-
-  &::before {
-    content: '';
-    display: inline-block;
-    height: 2px;
-    width: 100%;
-    background-color: ${theme.colors.accent};
-
-    position: absolute;
-    top: 90%;
-
-    transform: scale(0);
-  }
-
   &:hover {
     opacity: 0.8;
+  }
+
+  @media ${theme.media.desktop} {
+    position: relative;
 
     &::before {
-      transform: scale(1);
+      content: '';
+      display: inline-block;
+      height: 2px;
+      width: 100%;
+      background-color: ${theme.colors.background};
+
+      position: absolute;
+      top: 90%;
+
+      transform: scale(0);
+    }
+
+    &:hover {
+      opacity: 0.8;
+
+      &::before {
+        transform: scale(1);
+      }
     }
   }
 `
 
 const Link = styled.a`
-  font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  ${font({ family: "'Raleway', sans-serif", weight: 500, lineHeight: 1.56 })}
   font-size: 18px;
-  line-height: 156%;
   color: ${theme.colors.fontPrimary};
 `

@@ -12,7 +12,7 @@ export const Button = styled.button<ButtonPropsType>`
   font-size: 18px;
   color: ${theme.colors.fontPrimary};
 
-  padding: 8px 24px;
+  padding: 10px 24px;
   border-radius: 8px;
 
   ${props => props.btnType === 'primary' && css<ButtonPropsType>`
@@ -34,7 +34,7 @@ export const Button = styled.button<ButtonPropsType>`
     ${props => props.btnType === 'primary' && css<ButtonPropsType>`
       background-color: transparent;
       border: 2px solid ${theme.colors.fontPrimary};
-      padding: 6px 22px;
+      padding: 8px 22px;
     `}
 
     ${props => props.btnType === 'outline' && css<ButtonPropsType>`

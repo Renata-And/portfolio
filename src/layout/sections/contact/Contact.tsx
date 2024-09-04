@@ -4,6 +4,7 @@ import { SectionTitle } from '../../../components/SectionTitle.styled'
 import { Button } from '../../../components/Button.styled'
 import { theme } from '../../../styles/Theme'
 import { Container } from '../../../components/Container.styled'
+import { font } from '../../../styles/Common'
 
 export const Contact = () => {
   return (
@@ -32,8 +33,9 @@ export const Contact = () => {
 
 const StyledContact = styled.section`
   textarea {
+    display: block;
     resize: none;
-    height: 160px;
+    height: 158px;
   }
 `
 
@@ -52,7 +54,7 @@ const StyledForm = styled.form`
 `
 
 const StyledLabel = styled.label`
-  font-weight: 600;
+  ${font({ weight: 600, lineHeight: 1.5 })}
   font-size: 16px;
   color: ${theme.colors.fontPrimary};
 
@@ -66,7 +68,7 @@ const Field = styled.input`
   width: 100%;
   border: 1px solid ${theme.colors.borderColor};
   border-radius: 8px;
-  height: 40px;
+  height: 38px;
 
   font-size: 16px;
   font-family: 'Nunito', sans-serif;

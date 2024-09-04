@@ -20,7 +20,7 @@ export const SectionTitle = styled.h2`
     background-color: ${theme.colors.accent};
 
     position: absolute;
-    bottom: -5px;
+    bottom: -10px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
