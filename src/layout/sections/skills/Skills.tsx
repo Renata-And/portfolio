@@ -3,6 +3,7 @@ import { SectionTitle } from '../../../components/SectionTitle.styled';
 import { Icon } from '../../../components/icon/Icon';
 import { Container } from '../../../components/Container.styled';
 import { S } from './Skills_Styles';
+import Tilt from 'react-parallax-tilt';
 
 const skillsData = [
   { name: 'css', width: '121', heigth: '121' },
@@ -25,9 +26,9 @@ export const Skills: React.FC = () => {
         <S.IconsWrapper>
           {skillsData.map((s, i) => {
             return (
-              <div>
+              <Tilt scale={1.1} transitionSpeed={2500} >
                 <Icon key={i} iconId={s.name} width={s.width} height={s.heigth} viewBox={`0 0 ${s.width} ${s.heigth}`} />
-              </div>
+              </Tilt>
             )
           })}
         </S.IconsWrapper>
