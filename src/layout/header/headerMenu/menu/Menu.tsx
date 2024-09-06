@@ -14,6 +14,7 @@ export const Menu: React.FC<MenuPropsType> = (props: MenuPropsType) => {
             <S.NavLink
               to={item.href}
               smooth={true}
+              offset={50}
             >
               {item.itemTitle}
             </S.NavLink>

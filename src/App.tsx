@@ -6,6 +6,7 @@ import { Projects } from './layout/sections/projects/Projects';
 import { Experience } from './layout/sections/experience/Experience';
 import { Contact } from './layout/sections/contact/Contact';
 import { Footer } from './layout/footer/Footer';
+import { GoTopBtn } from './components/goTopBtn/GoTopBtn';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Experience />
       <Contact />
       <Footer />
+      <GoTopBtn />
     </div>
   );
 }
