@@ -61,6 +61,8 @@ const Link = styled.a`
   font-size: 18px;
   color: ${theme.colors.fontPrimary};
 
+  transition: background-color ${theme.animations.transition};
+
   &:hover {
     border: 1px solid ${theme.colors.accent};
     background-color: ${theme.colors.accent};

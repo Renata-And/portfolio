@@ -9,6 +9,7 @@ type MenuPropsType = {
 export const MobileMenu: React.FC<MenuPropsType> = (props: MenuPropsType) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const onBurgerBtnClick = () => { setMenuIsOpen(!menuIsOpen) };
+
   return (
     <S.MobileMenu>
       <S.BurgerButton isOpen={menuIsOpen} onClick={onBurgerBtnClick}>

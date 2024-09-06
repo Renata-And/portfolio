@@ -25,6 +25,8 @@ export const Button = styled.button<ButtonPropsType>`
     border: 2px solid ${theme.colors.fontPrimary};
   `}
 
+  transition: background-color ${theme.animations.transition};
+
   & + & {
     margin-left: 12px;
   }

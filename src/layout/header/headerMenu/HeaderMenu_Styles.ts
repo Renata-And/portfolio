@@ -7,8 +7,10 @@ import { Link } from 'react-scroll';
 // Menu
 
 const MenuItem = styled.li`
+  transition: ${theme.animations.transition};
+
   &:hover {
-    opacity: 0.8;
+    transform: scale(1.1);
   }
 
   @media ${theme.media.desktop} {
@@ -25,11 +27,10 @@ const MenuItem = styled.li`
       top: 90%;
 
       transform: scale(0);
+      transition: ${theme.animations.transition};
     }
 
     &:hover {
-      opacity: 0.8;
-
       &::before {
         transform: scale(1);
       }
@@ -41,6 +42,10 @@ const NavLink = styled(Link)`
   ${font({ family: "'Raleway', sans-serif", weight: 500, lineHeight: 1.56 })}
   font-size: 18px;
   color: ${theme.colors.fontPrimary};
+
+  @media ${theme.media.tablet} {
+    font-size: 26px;
+  }
 `
 
 // Mobile menu
@@ -55,23 +60,31 @@ const MobileMenuPopup = styled.div<{ isOpen: boolean }>`
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(253, 196, 53, 0.98);
+  background-color: rgba(253, 196, 53, 0.95);
   z-index: 999;
-  display: none;
-
-  ${props => props.isOpen && css<{ isOpen: boolean }>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 0.6s ease-in-out;
 
   ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 0;
+    transition: 0.6s ease-in-out;
   }
+
+  ${props => props.isOpen && css<{ isOpen: boolean }>`
+    transform: translateY(0);
+
+    & ul {
+      gap: 30px;
+    }
+  `}
+
 `
 const BurgerButton = styled.button<{ isOpen: boolean }>`
   position: fixed;
@@ -87,6 +100,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
     height: 2px;
     background-color: ${theme.colors.fontPrimary};
     position: absolute;
+    transition: 0.6s ease-in-out;
 
     ${props => props.isOpen && css<{ isOpen: boolean }>`
       background-color: rgba(255, 255, 255, 0);
@@ -100,6 +114,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       background-color: ${theme.colors.fontPrimary};
       position: absolute;
       transform: translateY(-6px);
+      transition: 0.6s ease-in-out;
 
       ${props => props.isOpen && css<{ isOpen: boolean }>`
         transform: rotate(-45deg) translateY(0);
@@ -116,6 +131,7 @@ const BurgerButton = styled.button<{ isOpen: boolean }>`
       position: absolute;
       transform: translateY(6px);
 
+      transition: 0.6s ease-in-out;
       ${props => props.isOpen && css<{ isOpen: boolean }>`
         transform: rotate(45deg) translateY(0);
       `}

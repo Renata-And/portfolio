@@ -17,8 +17,8 @@ export const GoTopBtn: React.FC = () => {
         <StyledGoTopBtn onClick={() => { scroll.scrollToTop() }}>
           <Icon
             iconId={'arrowUp'}
-            width={'30px'}
-            height={'30px'}
+            width={'30'}
+            height={'30'}
             viewBox={'0 0 24 24'}
           />
         </StyledGoTopBtn >}

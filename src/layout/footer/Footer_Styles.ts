@@ -14,12 +14,19 @@ const SocialList = styled.ul`
 
 const SocialLink = styled.a`
   display: inline-block;
+  position: relative;
+  z-index: 5;
+  
   color: ${theme.colors.fontPrimary};
 
-  &:hover {
-    opacity: 0.7;
-    transform: scale(1.1);
-  }
+  transform: scale(1);
+  transition: ${theme.animations.transition};
+  opacity: 1;
+  
+    &:hover {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
 `
 
 const Copyright = styled.small`
