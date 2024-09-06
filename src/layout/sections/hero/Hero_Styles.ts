@@ -20,11 +20,11 @@ const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-shrink: 1.5;
-  max-width: 530px;
+  /* flex-shrink: 1.3; */
+  max-width: 550px;
 
   @media ${theme.media.tablet} {
-    max-width: 420px;
+    max-width: 430px;
   }
 `
 
