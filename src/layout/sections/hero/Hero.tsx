@@ -16,7 +16,7 @@ export const Hero: React.FC = () => {
             <S.Name>Hello,  my name is Renata Androsova</S.Name>
             <S.Text>Short text with details about you, what you do or your professional career. You can add more information on the about page.</S.Text>
             <div>
-              <Button btnType={'primary'}>Projects</Button>
+              <Button as='a' href={'#'} btnType={'primary'}>Projects</Button>
               <Button as='a' href={'#'} btnType={'outline'}>LinkedIn</Button>
             </div>
           </S.DescriptionWrapper>
