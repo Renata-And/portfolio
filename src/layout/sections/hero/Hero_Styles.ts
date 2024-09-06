@@ -9,6 +9,10 @@ const Hero = styled.section`
   z-index: 0;
   overflow-x: clip;
 
+  a + a {
+    margin-left: 12px;
+  }
+
   div > div {
     @media ${theme.media.mobile} {
       flex-wrap: wrap-reverse;
@@ -20,7 +24,7 @@ const DescriptionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* flex-shrink: 1.3; */
+  flex-shrink: 1.3;
   max-width: 550px;
 
   @media ${theme.media.tablet} {

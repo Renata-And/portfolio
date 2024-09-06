@@ -22,7 +22,7 @@ const workplaceData = [
 
 export const Experience: React.FC = () => {
   return (
-    <S.Experience>
+    <S.Experience id={'experience'}>
       <SectionTitle>Experience</SectionTitle>
       <Container>
         <FlexWrapper justify={'space-around'} align={'center'} wrap={'wrap'}>

@@ -11,7 +11,12 @@ export const Menu: React.FC<MenuPropsType> = (props: MenuPropsType) => {
       {props.items.map((item, index) => {
         return (
           <S.MenuItem key={index}>
-            <S.Link href={item.href}>{item.itemTitle}</S.Link>
+            <S.NavLink
+              to={item.href}
+              smooth={true}
+            >
+              {item.itemTitle}
+            </S.NavLink>
           </S.MenuItem>
         )
       })}

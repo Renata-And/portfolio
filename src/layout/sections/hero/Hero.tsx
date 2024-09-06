@@ -5,10 +5,11 @@ import { Container } from '../../../components/Container.styled';
 import photoSrc from '../../../assets/images/photo.png';
 import { S } from './Hero_Styles';
 import Typewriter from 'typewriter-effect';
+import { Link } from 'react-scroll';
 
 export const Hero: React.FC = () => {
   return (
-    <S.Hero>
+    <S.Hero id={'about'}>
       <Container>
         <FlexWrapper justify={'space-between'} align={'flex-start'} gap={'10px'}>
           <S.DescriptionWrapper>
@@ -24,7 +25,9 @@ export const Hero: React.FC = () => {
             </S.Name>
             <S.Text>Short text with details about you, what you do or your professional career. You can add more information on the about page.</S.Text>
             <div>
-              <Button as='a' href={'#'} btnType={'primary'}>Projects</Button>
+              <Link to={'projects'} smooth={true}>
+                <Button btnType={'primary'}>Projects</Button>
+              </Link>
               <Button as='a' href={'#'} btnType={'outline'}>LinkedIn</Button>
             </div>
           </S.DescriptionWrapper>

@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { theme } from '../../../styles/Theme';
 import { font } from '../../../styles/Common';
+import { Link } from 'react-scroll';
 
 
 // Menu
@@ -36,7 +37,7 @@ const MenuItem = styled.li`
   }
 `
 
-const Link = styled.a`
+const NavLink = styled(Link)`
   ${font({ family: "'Raleway', sans-serif", weight: 500, lineHeight: 1.56 })}
   font-size: 18px;
   color: ${theme.colors.fontPrimary};
@@ -136,7 +137,7 @@ const DesktopMenu = styled.nav`
 
 export const S = {
   MenuItem,
-  Link,
+  NavLink,
   MobileMenu,
   MobileMenuPopup,
   BurgerButton,

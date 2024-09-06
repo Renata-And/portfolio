@@ -6,7 +6,7 @@ import { DesktopMenu } from './headerMenu/desktopMenu/DesktopMenu';
 import { MobileMenu } from './headerMenu/mobileMenu/MobileMenu';
 import { S } from './Header_Styles';
 
-const menuItems = [{ itemTitle: 'About', href: '#' }, { itemTitle: 'Projects', href: '#' }, { itemTitle: 'Experience', href: '#' }, { itemTitle: 'Contacts', href: '#' }];
+const menuItems = [{ itemTitle: 'About', href: 'about' }, { itemTitle: 'Projects', href: 'projects' }, { itemTitle: 'Experience', href: 'experience' }, { itemTitle: 'Contacts', href: 'contacts' }];
 
 export const Header: React.FC = () => {
   const [width, setWidth] = React.useState(window.innerWidth);

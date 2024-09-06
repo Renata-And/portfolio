@@ -20,9 +20,9 @@ export const Button = styled.button<ButtonPropsType>`
   `}
 
   ${props => props.btnType === 'outline' && css<ButtonPropsType>`
+    padding: 8px 24px;
     background-color: transparent;
     border: 2px solid ${theme.colors.fontPrimary};
-    line-height: 1;
   `}
 
   & + & {
@@ -40,7 +40,6 @@ export const Button = styled.button<ButtonPropsType>`
     ${props => props.btnType === 'outline' && css<ButtonPropsType>`
       background-color: ${theme.colors.accent};
       border: 2px solid ${theme.colors.accent};
-      line-height: 1;
     `}
   }
 `
