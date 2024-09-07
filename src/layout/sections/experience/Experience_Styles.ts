@@ -13,6 +13,7 @@ const Experience = styled.section`
 
   ${FlexWrapper}:first-child {
     position: relative;
+    z-index: 1;
 
     &::after {
       content: '';
@@ -24,6 +25,7 @@ const Experience = styled.section`
       left: 50%;
       top: 53px;
       transform: translateX(-50%);
+      z-index: -1;
 
       @media ${theme.media.tablet} {
         display: none;
